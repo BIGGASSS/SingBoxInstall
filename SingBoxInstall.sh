@@ -46,7 +46,8 @@ echo "Enabling and starting sing-box service..."
 systemctl enable --now sing-box
 
 # Show service status
-echo "Service status:"
+echo "Service status in 5 seconds:"
+sleep 5
 systemctl status sing-box
 
 # Show password
