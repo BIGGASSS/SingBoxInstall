@@ -136,6 +136,7 @@ esac
 # Enable and start the service
 echo "Enabling and starting sing-box service..."
 systemctl enable --now sing-box
+systemctl restart sing-box
 
 # Show service status
 echo "Service status in 5 seconds:"
@@ -144,3 +145,4 @@ systemctl status sing-box
 
 # Show password
 echo "Password: ${PASSWORD}"
+echo "UUID: ${UUID}"
