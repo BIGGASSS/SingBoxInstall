@@ -10,6 +10,7 @@ bash <(curl -fsSL https://sing-box.app/deb-install.sh)
 # Generate random password
 echo "Generating random password..."
 PASSWORD=$(sing-box generate rand --base64 16)
+UUID=$(cat /proc/sys/kernel/random/uuid)
 
 # Prompt user to select configuration
 echo "Select configuration type:"
@@ -94,17 +95,18 @@ EOF
     "inbounds": [
         {
             "type": "shadowtls",
+            "tag": "shadowtls-in"
             "listen": "::",
             "listen_port": 11451,
             "detour": "shadowsocks-in",
             "version": 3,
             "users": [
                 {
-                    "password": "${PASSWORD}"
+                    "password": "${UUID}"
                 }
             ],
             "handshake": {
-                "server": "www.bing.com",
+                "server": "addons.mozilla.org",
                 "server_port": 443
             },
             "strict_mode": true
@@ -116,7 +118,8 @@ EOF
             "method": "2022-blake3-aes-128-gcm",
             "password": "${PASSWORD}",
             "multiplex": {
-                "enabled": false
+                "enabled": true,
+                "padding": true
             }
         }
     ]
