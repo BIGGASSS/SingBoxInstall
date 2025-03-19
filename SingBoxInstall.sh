@@ -95,7 +95,7 @@ EOF
     "inbounds": [
         {
             "type": "shadowtls",
-            "tag": "shadowtls-in"
+            "tag": "shadowtls-in",
             "listen": "::",
             "listen_port": 11451,
             "detour": "shadowsocks-in",
@@ -115,7 +115,6 @@ EOF
             "type": "shadowsocks",
             "tag": "shadowsocks-in",
             "listen": "127.0.0.1",
-            "network": "tcp",
             "method": "2022-blake3-aes-128-gcm",
             "password": "${PASSWORD}",
             "multiplex": {
