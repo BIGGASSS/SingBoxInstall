@@ -148,16 +148,16 @@ echo "mihomo config:"
 HOST_IP=$(curl -s ip.sb)
 case $choice in
   1)
-    echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11450, type: ss, cipher: 2022-blake3-aes-128-gcm, password:${PASSWORD}, udp: true}"
+    echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11450, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ${PASSWORD}, udp: true}"
     echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11451, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ${PASSWORD}, udp: true, smux: {enabled: true, protocol: smux, max-connections: 16, min-streams: 8, max-streams: 0, padding: true}}"
     ;;
   2)
-    echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11450, type: ss, cipher: 2022-blake3-aes-128-gcm, password:${PASSWORD}, udp: true}"
+    echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11450, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ${PASSWORD}, udp: true}"
     ;;
   3)
     echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11451, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ${PASSWORD}, udp: true, smux: {enabled: true, protocol: smux, max-connections: 16, min-streams: 8, max-streams: 0, padding: true}}"
     ;;
   4)
-    echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11451, type: ss, cipher: 2022-blake3-aes-128-gcm, password:${PASSWORD}, udp: true, udp-over-tcp: true, smux: {enabled: true, protocol: smux, max-connections: 16, min-streams: 8, max-streams: 0, padding: true}, plugin: shadow-tls, client-fingerprint: chrome, plugin-opts: {host: \"addons.mozilla.org\", password: ${UUID}, version: 3}}"
+    echo "- {name: <let user decide>, server: ${HOST_IP}, port: 11451, type: ss, cipher: 2022-blake3-aes-128-gcm, password: ${PASSWORD}, udp: true, udp-over-tcp: true, smux: {enabled: true, protocol: smux, max-connections: 16, min-streams: 8, max-streams: 0, padding: true}, plugin: shadow-tls, client-fingerprint: chrome, plugin-opts: {host: \"addons.mozilla.org\", password: ${UUID}, version: 3}}"
     ;;
 esac
